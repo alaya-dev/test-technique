@@ -100,6 +100,29 @@ Pour les membres : Après la connexion, l'utilisateur verra une liste de tâches
 
 Le leader et les membres recevront quotidiennement un rappel des tâches incomplètes via email.
 
+///////////////////////////////////////////////////////////////////////
+IV- configuration de service email
+
+Mettez à jour votre fichier .env  :
+PAR EXEMPLE:
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=3leya21@gmail.com
+MAIL_PASSWORD=onldraxuvmtswuwm   #mot de passe de l'application 
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="3leya21@gmail.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+
+V-Fichiers de Log
+Les fichiers de log de l'application se trouvent dans le répertoire storage/logs. Vous trouverez principalement trois fichiers de log :
+
+statistics.log : Contient les logs liés aux statistiques des tâches.
+task_management.log : Contient les logs liés à la gestion des tâches.
+user_management.log : Contient les logs liés à la gestion des utilisateurs.
+Ces fichiers peuvent être consultés pour diagnostiquer les problèmes ou vérifier les activités de l'application.
 
 
 
