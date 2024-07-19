@@ -61,13 +61,46 @@ II-Guide  pour Exécuter l'application sur docker :
 
 Assurez-vous que Docker Desktop est installé et en cours d'exécution 
 
-1-Ouvrez le terminal et executez la commande suivante 
+1- Aprés avoir cloner le repo mettez à jour votre fichier .env (DB_HOST = db au lieu 127.0.0.1) :
+
+
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=nom_de_votre_bd
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+2- Ouvrez le terminal et executez la commande suivante 
 ********************************
 docker-compose up -d
 **********************************
-2-tapez l'url "localhost:8000" sur le navigateur
+ 
+3-Tapez l'url "localhost:8000" sur le navigateur
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+III-Guide d'Utilisation de l'Application
 
-III- Description 
+1. Connexion
+Pour vous connecter à l'application, utilisez les informations suivantes créées via le fichier app\database\seeders\LeaderSeeder.php :
+Email : 3leya21@gmail.com
+Mot de passe : 12345678
+
+2. Tableau de Bord du Leader
+Après la connexion, le leader sera dirigé vers un tableau de bord affichant les statistiques des tâches. Sur la gauche, il trouvera une barre de navigation (navbar) avec les options suivantes :
+Gestion des utilisateurs(membres)
+Gestion des tâches
+Déconnexion
+
+3. Gestion des Tâches
+
+Lorsque le leader affecte une tâche à un utilisateur ou modifie une tâche affectée, l'utilisateur sera notifié par email.
+
+Pour les membres : Après la connexion, l'utilisateur verra une liste de tâches. Les tâches incomplètes seront affichées avec le statut "en attente". Lorsqu'un utilisateur termine une tâche, il doit cliquer sur le statut de cette tâche pour le transformer en "terminée". À ce moment, l'administrateur sera notifié par email que la tâche est terminée.
+
+Le leader et les membres recevront quotidiennement un rappel des tâches incomplètes via email.
+
+
 
 
 
